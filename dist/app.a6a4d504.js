@@ -123,29 +123,29 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.length = length;
-exports.copy = copy;
-exports.set = set;
 exports.add = add;
-exports.subtract = subtract;
-exports.multiply = multiply;
-exports.divide = divide;
-exports.scale = scale;
+exports.angle = void 0;
+exports.copy = copy;
+exports.cross = cross;
 exports.distance = distance;
+exports.divide = divide;
+exports.dot = dot;
+exports.exactEquals = exactEquals;
+exports.inverse = inverse;
+exports.length = length;
+exports.lerp = lerp;
+exports.multiply = multiply;
+exports.negate = negate;
+exports.normalize = normalize;
+exports.scale = scale;
+exports.scaleRotateMat4 = scaleRotateMat4;
+exports.set = set;
 exports.squaredDistance = squaredDistance;
 exports.squaredLength = squaredLength;
-exports.negate = negate;
-exports.inverse = inverse;
-exports.normalize = normalize;
-exports.dot = dot;
-exports.cross = cross;
-exports.lerp = lerp;
-exports.transformMat4 = transformMat4;
-exports.scaleRotateMat4 = scaleRotateMat4;
+exports.subtract = subtract;
 exports.transformMat3 = transformMat3;
+exports.transformMat4 = transformMat4;
 exports.transformQuat = transformQuat;
-exports.exactEquals = exactEquals;
-exports.angle = void 0;
 const EPSILON = 0.000001;
 /**
  * Calculates the length of a vec3
@@ -1717,14 +1717,14 @@ exports.Renderer = Renderer;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.copy = copy;
-exports.set = set;
 exports.add = add;
-exports.scale = scale;
-exports.length = length;
-exports.normalize = normalize;
+exports.copy = copy;
 exports.dot = dot;
+exports.length = length;
 exports.lerp = lerp;
+exports.normalize = normalize;
+exports.scale = scale;
+exports.set = set;
 const EPSILON = 0.000001;
 /**
  * Copy the values from one vec4 to another
@@ -1875,18 +1875,22 @@ function lerp(out, a, b, t) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.add = void 0;
+exports.conjugate = conjugate;
+exports.dot = exports.copy = void 0;
+exports.fromEuler = fromEuler;
+exports.fromMat3 = fromMat3;
 exports.identity = identity;
-exports.setAxisAngle = setAxisAngle;
+exports.invert = invert;
+exports.lerp = exports.length = void 0;
 exports.multiply = multiply;
+exports.normalize = void 0;
 exports.rotateX = rotateX;
 exports.rotateY = rotateY;
 exports.rotateZ = rotateZ;
+exports.set = exports.scale = void 0;
+exports.setAxisAngle = setAxisAngle;
 exports.slerp = slerp;
-exports.invert = invert;
-exports.conjugate = conjugate;
-exports.fromMat3 = fromMat3;
-exports.fromEuler = fromEuler;
-exports.normalize = exports.length = exports.lerp = exports.dot = exports.scale = exports.add = exports.set = exports.copy = void 0;
 
 var vec4 = _interopRequireWildcard(require("./Vec4Func.js"));
 
@@ -2487,28 +2491,28 @@ exports.Quat = Quat;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.copy = copy;
-exports.set = set;
-exports.identity = identity;
-exports.transpose = transpose;
-exports.invert = invert;
-exports.determinant = determinant;
-exports.multiply = multiply;
-exports.translate = translate;
-exports.scale = scale;
-exports.rotate = rotate;
-exports.getTranslation = getTranslation;
-exports.getScaling = getScaling;
-exports.getMaxScaleOnAxis = getMaxScaleOnAxis;
-exports.fromRotationTranslationScale = fromRotationTranslationScale;
-exports.fromQuat = fromQuat;
-exports.perspective = perspective;
-exports.ortho = ortho;
-exports.targetTo = targetTo;
 exports.add = add;
-exports.subtract = subtract;
-exports.multiplyScalar = multiplyScalar;
+exports.copy = copy;
+exports.determinant = determinant;
+exports.fromQuat = fromQuat;
+exports.fromRotationTranslationScale = fromRotationTranslationScale;
+exports.getMaxScaleOnAxis = getMaxScaleOnAxis;
 exports.getRotation = void 0;
+exports.getScaling = getScaling;
+exports.getTranslation = getTranslation;
+exports.identity = identity;
+exports.invert = invert;
+exports.multiply = multiply;
+exports.multiplyScalar = multiplyScalar;
+exports.ortho = ortho;
+exports.perspective = perspective;
+exports.rotate = rotate;
+exports.scale = scale;
+exports.set = set;
+exports.subtract = subtract;
+exports.targetTo = targetTo;
+exports.translate = translate;
+exports.transpose = transpose;
 const EPSILON = 0.000001;
 /**
  * Copy the values from one mat4 to another
@@ -4100,23 +4104,23 @@ exports.Camera = Camera;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.add = add;
+exports.copy = copy;
+exports.determinant = determinant;
 exports.fromMat4 = fromMat4;
 exports.fromQuat = fromQuat;
-exports.copy = copy;
-exports.set = set;
 exports.identity = identity;
-exports.transpose = transpose;
 exports.invert = invert;
-exports.determinant = determinant;
 exports.multiply = multiply;
-exports.translate = translate;
-exports.rotate = rotate;
-exports.scale = scale;
+exports.multiplyScalar = multiplyScalar;
 exports.normalFromMat4 = normalFromMat4;
 exports.projection = projection;
-exports.add = add;
+exports.rotate = rotate;
+exports.scale = scale;
+exports.set = set;
 exports.subtract = subtract;
-exports.multiplyScalar = multiplyScalar;
+exports.translate = translate;
+exports.transpose = transpose;
 const EPSILON = 0.000001;
 /**
  * Copies the upper-left 3x3 values into the given mat3.
@@ -5240,28 +5244,28 @@ exports.Color = Color;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.copy = copy;
-exports.set = set;
 exports.add = add;
-exports.subtract = subtract;
-exports.multiply = multiply;
-exports.divide = divide;
-exports.scale = scale;
-exports.distance = distance;
-exports.squaredDistance = squaredDistance;
-exports.length = length;
-exports.squaredLength = squaredLength;
-exports.negate = negate;
-exports.inverse = inverse;
-exports.normalize = normalize;
-exports.dot = dot;
+exports.copy = copy;
 exports.cross = cross;
+exports.distance = distance;
+exports.divide = divide;
+exports.dot = dot;
+exports.exactEquals = exactEquals;
+exports.inverse = inverse;
+exports.length = length;
 exports.lerp = lerp;
+exports.multiply = multiply;
+exports.negate = negate;
+exports.normalize = normalize;
+exports.scale = scale;
+exports.set = set;
+exports.squaredDistance = squaredDistance;
+exports.squaredLength = squaredLength;
+exports.subtract = subtract;
 exports.transformMat2 = transformMat2;
 exports.transformMat2d = transformMat2d;
 exports.transformMat3 = transformMat3;
 exports.transformMat4 = transformMat4;
-exports.exactEquals = exactEquals;
 const EPSILON = 0.000001;
 /**
  * Copy the values from one vec2 to another
@@ -9952,22 +9956,16 @@ exports.GLTFLoader = GLTFLoader;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-Object.defineProperty(exports, "Geometry", {
+Object.defineProperty(exports, "Animation", {
   enumerable: true,
   get: function () {
-    return _Geometry.Geometry;
+    return _Animation.Animation;
   }
 });
-Object.defineProperty(exports, "Program", {
+Object.defineProperty(exports, "Box", {
   enumerable: true,
   get: function () {
-    return _Program.Program;
-  }
-});
-Object.defineProperty(exports, "Renderer", {
-  enumerable: true,
-  get: function () {
-    return _Renderer.Renderer;
+    return _Box.Box;
   }
 });
 Object.defineProperty(exports, "Camera", {
@@ -9976,40 +9974,64 @@ Object.defineProperty(exports, "Camera", {
     return _Camera.Camera;
   }
 });
-Object.defineProperty(exports, "Transform", {
-  enumerable: true,
-  get: function () {
-    return _Transform.Transform;
-  }
-});
-Object.defineProperty(exports, "Mesh", {
-  enumerable: true,
-  get: function () {
-    return _Mesh.Mesh;
-  }
-});
-Object.defineProperty(exports, "Texture", {
-  enumerable: true,
-  get: function () {
-    return _Texture.Texture;
-  }
-});
-Object.defineProperty(exports, "RenderTarget", {
-  enumerable: true,
-  get: function () {
-    return _RenderTarget.RenderTarget;
-  }
-});
 Object.defineProperty(exports, "Color", {
   enumerable: true,
   get: function () {
     return _Color.Color;
   }
 });
+Object.defineProperty(exports, "Curve", {
+  enumerable: true,
+  get: function () {
+    return _Curve.Curve;
+  }
+});
+Object.defineProperty(exports, "Cylinder", {
+  enumerable: true,
+  get: function () {
+    return _Cylinder.Cylinder;
+  }
+});
 Object.defineProperty(exports, "Euler", {
   enumerable: true,
   get: function () {
     return _Euler.Euler;
+  }
+});
+Object.defineProperty(exports, "Flowmap", {
+  enumerable: true,
+  get: function () {
+    return _Flowmap.Flowmap;
+  }
+});
+Object.defineProperty(exports, "GLTFLoader", {
+  enumerable: true,
+  get: function () {
+    return _GLTFLoader.GLTFLoader;
+  }
+});
+Object.defineProperty(exports, "GLTFSkin", {
+  enumerable: true,
+  get: function () {
+    return _GLTFSkin.GLTFSkin;
+  }
+});
+Object.defineProperty(exports, "GPGPU", {
+  enumerable: true,
+  get: function () {
+    return _GPGPU.GPGPU;
+  }
+});
+Object.defineProperty(exports, "Geometry", {
+  enumerable: true,
+  get: function () {
+    return _Geometry.Geometry;
+  }
+});
+Object.defineProperty(exports, "KTXTexture", {
+  enumerable: true,
+  get: function () {
+    return _KTXTexture.KTXTexture;
   }
 });
 Object.defineProperty(exports, "Mat3", {
@@ -10024,10 +10046,124 @@ Object.defineProperty(exports, "Mat4", {
     return _Mat2.Mat4;
   }
 });
+Object.defineProperty(exports, "Mesh", {
+  enumerable: true,
+  get: function () {
+    return _Mesh.Mesh;
+  }
+});
+Object.defineProperty(exports, "NormalProgram", {
+  enumerable: true,
+  get: function () {
+    return _NormalProgram.NormalProgram;
+  }
+});
+Object.defineProperty(exports, "Orbit", {
+  enumerable: true,
+  get: function () {
+    return _Orbit.Orbit;
+  }
+});
+Object.defineProperty(exports, "Plane", {
+  enumerable: true,
+  get: function () {
+    return _Plane.Plane;
+  }
+});
+Object.defineProperty(exports, "Polyline", {
+  enumerable: true,
+  get: function () {
+    return _Polyline.Polyline;
+  }
+});
+Object.defineProperty(exports, "Post", {
+  enumerable: true,
+  get: function () {
+    return _Post.Post;
+  }
+});
+Object.defineProperty(exports, "Program", {
+  enumerable: true,
+  get: function () {
+    return _Program.Program;
+  }
+});
 Object.defineProperty(exports, "Quat", {
   enumerable: true,
   get: function () {
     return _Quat.Quat;
+  }
+});
+Object.defineProperty(exports, "Raycast", {
+  enumerable: true,
+  get: function () {
+    return _Raycast.Raycast;
+  }
+});
+Object.defineProperty(exports, "RenderTarget", {
+  enumerable: true,
+  get: function () {
+    return _RenderTarget.RenderTarget;
+  }
+});
+Object.defineProperty(exports, "Renderer", {
+  enumerable: true,
+  get: function () {
+    return _Renderer.Renderer;
+  }
+});
+Object.defineProperty(exports, "Shadow", {
+  enumerable: true,
+  get: function () {
+    return _Shadow.Shadow;
+  }
+});
+Object.defineProperty(exports, "Skin", {
+  enumerable: true,
+  get: function () {
+    return _Skin.Skin;
+  }
+});
+Object.defineProperty(exports, "Sphere", {
+  enumerable: true,
+  get: function () {
+    return _Sphere.Sphere;
+  }
+});
+Object.defineProperty(exports, "Text", {
+  enumerable: true,
+  get: function () {
+    return _Text.Text;
+  }
+});
+Object.defineProperty(exports, "Texture", {
+  enumerable: true,
+  get: function () {
+    return _Texture.Texture;
+  }
+});
+Object.defineProperty(exports, "TextureLoader", {
+  enumerable: true,
+  get: function () {
+    return _TextureLoader.TextureLoader;
+  }
+});
+Object.defineProperty(exports, "Torus", {
+  enumerable: true,
+  get: function () {
+    return _Torus.Torus;
+  }
+});
+Object.defineProperty(exports, "Transform", {
+  enumerable: true,
+  get: function () {
+    return _Transform.Transform;
+  }
+});
+Object.defineProperty(exports, "Triangle", {
+  enumerable: true,
+  get: function () {
+    return _Triangle.Triangle;
   }
 });
 Object.defineProperty(exports, "Vec2", {
@@ -10046,138 +10182,6 @@ Object.defineProperty(exports, "Vec4", {
   enumerable: true,
   get: function () {
     return _Vec3.Vec4;
-  }
-});
-Object.defineProperty(exports, "Plane", {
-  enumerable: true,
-  get: function () {
-    return _Plane.Plane;
-  }
-});
-Object.defineProperty(exports, "Box", {
-  enumerable: true,
-  get: function () {
-    return _Box.Box;
-  }
-});
-Object.defineProperty(exports, "Sphere", {
-  enumerable: true,
-  get: function () {
-    return _Sphere.Sphere;
-  }
-});
-Object.defineProperty(exports, "Cylinder", {
-  enumerable: true,
-  get: function () {
-    return _Cylinder.Cylinder;
-  }
-});
-Object.defineProperty(exports, "Triangle", {
-  enumerable: true,
-  get: function () {
-    return _Triangle.Triangle;
-  }
-});
-Object.defineProperty(exports, "Torus", {
-  enumerable: true,
-  get: function () {
-    return _Torus.Torus;
-  }
-});
-Object.defineProperty(exports, "Orbit", {
-  enumerable: true,
-  get: function () {
-    return _Orbit.Orbit;
-  }
-});
-Object.defineProperty(exports, "Raycast", {
-  enumerable: true,
-  get: function () {
-    return _Raycast.Raycast;
-  }
-});
-Object.defineProperty(exports, "Curve", {
-  enumerable: true,
-  get: function () {
-    return _Curve.Curve;
-  }
-});
-Object.defineProperty(exports, "Post", {
-  enumerable: true,
-  get: function () {
-    return _Post.Post;
-  }
-});
-Object.defineProperty(exports, "Skin", {
-  enumerable: true,
-  get: function () {
-    return _Skin.Skin;
-  }
-});
-Object.defineProperty(exports, "Animation", {
-  enumerable: true,
-  get: function () {
-    return _Animation.Animation;
-  }
-});
-Object.defineProperty(exports, "Text", {
-  enumerable: true,
-  get: function () {
-    return _Text.Text;
-  }
-});
-Object.defineProperty(exports, "NormalProgram", {
-  enumerable: true,
-  get: function () {
-    return _NormalProgram.NormalProgram;
-  }
-});
-Object.defineProperty(exports, "Flowmap", {
-  enumerable: true,
-  get: function () {
-    return _Flowmap.Flowmap;
-  }
-});
-Object.defineProperty(exports, "GPGPU", {
-  enumerable: true,
-  get: function () {
-    return _GPGPU.GPGPU;
-  }
-});
-Object.defineProperty(exports, "Polyline", {
-  enumerable: true,
-  get: function () {
-    return _Polyline.Polyline;
-  }
-});
-Object.defineProperty(exports, "Shadow", {
-  enumerable: true,
-  get: function () {
-    return _Shadow.Shadow;
-  }
-});
-Object.defineProperty(exports, "KTXTexture", {
-  enumerable: true,
-  get: function () {
-    return _KTXTexture.KTXTexture;
-  }
-});
-Object.defineProperty(exports, "TextureLoader", {
-  enumerable: true,
-  get: function () {
-    return _TextureLoader.TextureLoader;
-  }
-});
-Object.defineProperty(exports, "GLTFLoader", {
-  enumerable: true,
-  get: function () {
-    return _GLTFLoader.GLTFLoader;
-  }
-});
-Object.defineProperty(exports, "GLTFSkin", {
-  enumerable: true,
-  get: function () {
-    return _GLTFSkin.GLTFSkin;
   }
 });
 
@@ -10266,7 +10270,7 @@ module.exports = "/2.ec21867c.png";
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = exports.GUI = exports.gui = exports.dom = exports.controllers = exports.color = void 0;
+exports.gui = exports.dom = exports.default = exports.controllers = exports.color = exports.GUI = void 0;
 
 /**
  * dat-gui JavaScript Controller Library
@@ -13174,7 +13178,7 @@ exports.default = _default;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports._colorExp = exports._getCache = exports._getSetter = exports._missingPlugin = exports._round = exports._roundModifier = exports._config = exports._ticker = exports._plugins = exports._checkPlugin = exports._replaceRandom = exports._colorStringFilter = exports._sortPropTweensByPriority = exports._forEachName = exports._removeLinkedListItem = exports._setDefaults = exports._relExp = exports._renderComplexString = exports._isUndefined = exports._isString = exports._numWithUnitExp = exports._numExp = exports._getProperty = exports.shuffle = exports.interpolate = exports.unitize = exports.pipe = exports.mapRange = exports.toArray = exports.splitColor = exports.clamp = exports.getUnit = exports.normalize = exports.snap = exports.random = exports.distribute = exports.wrapYoyo = exports.wrap = exports.Circ = exports.Expo = exports.Sine = exports.Bounce = exports.SteppedEase = exports.Back = exports.Elastic = exports.Strong = exports.Quint = exports.Quart = exports.Cubic = exports.Quad = exports.Linear = exports.Power4 = exports.Power3 = exports.Power2 = exports.Power1 = exports.Power0 = exports.default = exports.gsap = exports.PropTween = exports.TweenLite = exports.TweenMax = exports.Tween = exports.TimelineLite = exports.TimelineMax = exports.Timeline = exports.Animation = exports.GSCache = void 0;
+exports.wrapYoyo = exports.wrap = exports.unitize = exports.toArray = exports.splitColor = exports.snap = exports.shuffle = exports.random = exports.pipe = exports.normalize = exports.mapRange = exports.interpolate = exports.gsap = exports.getUnit = exports.distribute = exports.default = exports.clamp = exports._ticker = exports._sortPropTweensByPriority = exports._setDefaults = exports._roundModifier = exports._round = exports._replaceRandom = exports._renderComplexString = exports._removeLinkedListItem = exports._relExp = exports._plugins = exports._numWithUnitExp = exports._numExp = exports._missingPlugin = exports._isUndefined = exports._isString = exports._getSetter = exports._getProperty = exports._getCache = exports._forEachName = exports._config = exports._colorStringFilter = exports._colorExp = exports._checkPlugin = exports.TweenMax = exports.TweenLite = exports.Tween = exports.TimelineMax = exports.TimelineLite = exports.Timeline = exports.Strong = exports.SteppedEase = exports.Sine = exports.Quint = exports.Quart = exports.Quad = exports.PropTween = exports.Power4 = exports.Power3 = exports.Power2 = exports.Power1 = exports.Power0 = exports.Linear = exports.GSCache = exports.Expo = exports.Elastic = exports.Cubic = exports.Circ = exports.Bounce = exports.Back = exports.Animation = void 0;
 
 function _assertThisInitialized(self) {
   if (self === void 0) {
@@ -17096,7 +17100,7 @@ exports.Power0 = Power0;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.checkPrefix = exports._createElement = exports._getBBox = exports.default = exports.CSSPlugin = void 0;
+exports.default = exports.checkPrefix = exports._getBBox = exports._createElement = exports.CSSPlugin = void 0;
 
 var _gsapCore = require("./gsap-core.js");
 
@@ -18515,6 +18519,54 @@ _gsapCore.gsap.registerPlugin(CSSPlugin);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+Object.defineProperty(exports, "Back", {
+  enumerable: true,
+  get: function () {
+    return _gsapCore.Back;
+  }
+});
+Object.defineProperty(exports, "Bounce", {
+  enumerable: true,
+  get: function () {
+    return _gsapCore.Bounce;
+  }
+});
+Object.defineProperty(exports, "CSSPlugin", {
+  enumerable: true,
+  get: function () {
+    return _CSSPlugin.CSSPlugin;
+  }
+});
+Object.defineProperty(exports, "Circ", {
+  enumerable: true,
+  get: function () {
+    return _gsapCore.Circ;
+  }
+});
+Object.defineProperty(exports, "Cubic", {
+  enumerable: true,
+  get: function () {
+    return _gsapCore.Cubic;
+  }
+});
+Object.defineProperty(exports, "Elastic", {
+  enumerable: true,
+  get: function () {
+    return _gsapCore.Elastic;
+  }
+});
+Object.defineProperty(exports, "Expo", {
+  enumerable: true,
+  get: function () {
+    return _gsapCore.Expo;
+  }
+});
+Object.defineProperty(exports, "Linear", {
+  enumerable: true,
+  get: function () {
+    return _gsapCore.Linear;
+  }
+});
 Object.defineProperty(exports, "Power0", {
   enumerable: true,
   get: function () {
@@ -18545,22 +18597,10 @@ Object.defineProperty(exports, "Power4", {
     return _gsapCore.Power4;
   }
 });
-Object.defineProperty(exports, "Linear", {
-  enumerable: true,
-  get: function () {
-    return _gsapCore.Linear;
-  }
-});
 Object.defineProperty(exports, "Quad", {
   enumerable: true,
   get: function () {
     return _gsapCore.Quad;
-  }
-});
-Object.defineProperty(exports, "Cubic", {
-  enumerable: true,
-  get: function () {
-    return _gsapCore.Cubic;
   }
 });
 Object.defineProperty(exports, "Quart", {
@@ -18575,22 +18615,10 @@ Object.defineProperty(exports, "Quint", {
     return _gsapCore.Quint;
   }
 });
-Object.defineProperty(exports, "Strong", {
+Object.defineProperty(exports, "Sine", {
   enumerable: true,
   get: function () {
-    return _gsapCore.Strong;
-  }
-});
-Object.defineProperty(exports, "Elastic", {
-  enumerable: true,
-  get: function () {
-    return _gsapCore.Elastic;
-  }
-});
-Object.defineProperty(exports, "Back", {
-  enumerable: true,
-  get: function () {
-    return _gsapCore.Back;
+    return _gsapCore.Sine;
   }
 });
 Object.defineProperty(exports, "SteppedEase", {
@@ -18599,34 +18627,10 @@ Object.defineProperty(exports, "SteppedEase", {
     return _gsapCore.SteppedEase;
   }
 });
-Object.defineProperty(exports, "Bounce", {
+Object.defineProperty(exports, "Strong", {
   enumerable: true,
   get: function () {
-    return _gsapCore.Bounce;
-  }
-});
-Object.defineProperty(exports, "Sine", {
-  enumerable: true,
-  get: function () {
-    return _gsapCore.Sine;
-  }
-});
-Object.defineProperty(exports, "Expo", {
-  enumerable: true,
-  get: function () {
-    return _gsapCore.Expo;
-  }
-});
-Object.defineProperty(exports, "Circ", {
-  enumerable: true,
-  get: function () {
-    return _gsapCore.Circ;
-  }
-});
-Object.defineProperty(exports, "TweenLite", {
-  enumerable: true,
-  get: function () {
-    return _gsapCore.TweenLite;
+    return _gsapCore.Strong;
   }
 });
 Object.defineProperty(exports, "TimelineLite", {
@@ -18641,13 +18645,13 @@ Object.defineProperty(exports, "TimelineMax", {
     return _gsapCore.TimelineMax;
   }
 });
-Object.defineProperty(exports, "CSSPlugin", {
+Object.defineProperty(exports, "TweenLite", {
   enumerable: true,
   get: function () {
-    return _CSSPlugin.CSSPlugin;
+    return _gsapCore.TweenLite;
   }
 });
-exports.TweenMax = exports.default = exports.gsap = void 0;
+exports.gsap = exports.default = exports.TweenMax = void 0;
 
 var _gsapCore = require("./gsap-core.js");
 
@@ -18735,6 +18739,27 @@ var fragment =
 /* glsl */
 "\n    precision highp float;\n    precision highp int;\n    varying vec3 vNormal;\n    varying vec3 vColor;\n    varying float vAlpha;\n\n    void main() {\n      \n      if(vAlpha==0.) discard;\n      gl_FragColor = vec4(vColor, vAlpha);\n    }\n";
 {
+  var resize = function resize() {
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    camera.perspective({
+      aspect: gl.canvas.width / gl.canvas.height
+    });
+  };
+
+  var update = function update() {
+    requestAnimationFrame(update);
+    controls.update();
+    program.uniforms.uTransition.value = settings.transition;
+    program.uniforms.uLineWidth.value = settings.uLineWidth;
+    program.uniforms.uLineThick.value = settings.uLineThick;
+    program.uniforms.uCurve.value = settings.uCurve;
+    program.uniforms.uTime.value += settings.speed * 0.01;
+    renderer.render({
+      scene: scene,
+      camera: camera
+    });
+  };
+
   var renderer = new _ogl.Renderer({
     dpr: 2
   });
@@ -18747,14 +18772,6 @@ var fragment =
   camera.position.set(0, 0, 3);
   camera.lookAt([0, 0, 0]);
   var controls = new _ogl.Orbit(camera);
-
-  function resize() {
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    camera.perspective({
-      aspect: gl.canvas.width / gl.canvas.height
-    });
-  }
-
   window.addEventListener("resize", resize, false);
   resize();
   var scene = new _ogl.Transform(); // Upload empty texture while source loading
@@ -18868,22 +18885,8 @@ var fragment =
   plane.position.set(0, 0, 0);
   plane.setParent(scene);
   requestAnimationFrame(update);
-
-  function update() {
-    requestAnimationFrame(update);
-    controls.update();
-    program.uniforms.uTransition.value = settings.transition;
-    program.uniforms.uLineWidth.value = settings.uLineWidth;
-    program.uniforms.uLineThick.value = settings.uLineThick;
-    program.uniforms.uCurve.value = settings.uCurve;
-    program.uniforms.uTime.value += settings.speed * 0.01;
-    renderer.render({
-      scene: scene,
-      camera: camera
-    });
-  }
 }
-},{"ogl":"node_modules/ogl/src/index.mjs","../img/1.png":"img/1.png","../img/2.png":"img/2.png","dat.gui":"node_modules/dat.gui/build/dat.gui.module.js","gsap":"node_modules/gsap/index.js","nice-color-palettes":"node_modules/nice-color-palettes/100.json"}],"C:/Users/Rahul/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"ogl":"node_modules/ogl/src/index.mjs","../img/1.png":"img/1.png","../img/2.png":"img/2.png","dat.gui":"node_modules/dat.gui/build/dat.gui.module.js","gsap":"node_modules/gsap/index.js","nice-color-palettes":"node_modules/nice-color-palettes/100.json"}],"../../.nvm/versions/node/v16.13.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -18911,7 +18914,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58865" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53142" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -19087,5 +19090,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["C:/Users/Rahul/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","src/app.js"], null)
+},{}]},{},["../../.nvm/versions/node/v16.13.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","src/app.js"], null)
 //# sourceMappingURL=/app.a6a4d504.js.map
